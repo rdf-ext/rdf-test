@@ -1,0 +1,34 @@
+{
+  "name": "rdf-test",
+  "version": "0.0.0",
+  "description": "Type tests and assertions for RDF/JS objects",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "stricter-standard && c8 --reporter=lcov --reporter=text-summary mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rdf-ext/rdf-test.git"
+  },
+  "keywords": [
+    "rdf",
+    "rdfjs",
+    "test"
+  ],
+  "author": "Thomas Bergwinkl <bergi@axolotlfarm.org> (https://www.bergnet.org/people/bergi/card#me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rdf-ext/rdf-test/issues"
+  },
+  "homepage": "https://github.com/rdf-ext/rdf-test",
+  "dependencies": {
+    "rdf-ext": "^2.1.1",
+    "rdf-utils-fs": "^2.3.0"
+  },
+  "devDependencies": {
+    "c8": "^7.12.0",
+    "mocha": "^10.2.0",
+    "stricter-standard": "^0.2.0"
+  }
+}
