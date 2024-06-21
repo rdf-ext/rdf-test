@@ -1,7 +1,6 @@
 import { strictEqual } from 'assert'
 import { join, resolve } from 'path'
 import rdf from 'rdf-ext'
-import fromFile from 'rdf-utils-fs/fromFile.js'
 
 const datasetFileEqual = datasetFileEqualFactory()
 const quadStreamFileEqual = quadStreamFileEqualFactory()
@@ -17,7 +16,7 @@ function datasetFileEqualFactory ({ base = 'test/assets', ext = '.ttl' } = {}) {
   return async (dataset, name) => {
     const filename = join(resolve(base), `${name}${ext}`)
 
-    datasetEqual(dataset, await rdf.dataset().import(fromFile(filename)))
+    datasetEqual(dataset, await rdf.io.dataset.fromURL(filename))
   }
 }
 
@@ -39,7 +38,7 @@ function quadStreamFileEqualFactory ({ base = 'test/assets', ext = '.ttl' } = {}
   return async (quadStream, name) => {
     const filename = join(resolve(base), `${name}${ext}`)
 
-    await quadStreamEqual(quadStream, await rdf.dataset().import(fromFile(filename)))
+    await quadStreamEqual(quadStream, await rdf.io.dataset.fromURL(filename))
   }
 }
 
