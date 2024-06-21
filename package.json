@@ -1,6 +1,6 @@
 {
   "name": "rdf-test",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Type tests and assertions for RDF/JS objects",
   "type": "module",
   "main": "index.js",
